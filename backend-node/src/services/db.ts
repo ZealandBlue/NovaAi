@@ -1,5 +1,6 @@
 import sqlite3 from 'sqlite3';
 import path from 'path';
+import fs from 'fs';
 import { open, Database } from 'sqlite';
 
 let db: Database | null = null;
@@ -8,6 +9,11 @@ export async function initDb() {
   if (db) return;
 
   const dbPath = process.env.SQLITE_DB_PATH || path.join(process.cwd(), 'data', 'trades.db');
+
+  const dir = path.dirname(dbPath);
+  if (dbPath !== ':memory:' && !fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
 
   db = await open({
     filename: dbPath,
