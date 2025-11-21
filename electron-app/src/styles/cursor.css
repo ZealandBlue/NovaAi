@@ -1,0 +1,51 @@
+.ai-cursor-layer {
+  position: absolute;
+  inset: 16px;
+  pointer-events: none;
+}
+
+.ai-cursor-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  transition: left 0.32s cubic-bezier(0.22, 0.61, 0.36, 1),
+    top 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.ai-cursor-dot--buy {
+  background: radial-gradient(circle at 30% 20%, #22c55e, #16a34a);
+  box-shadow: 0 0 22px rgba(34, 197, 94, 0.9);
+}
+
+.ai-cursor-dot--sell {
+  background: radial-gradient(circle at 30% 20%, #f97373, #ef4444);
+  box-shadow: 0 0 22px rgba(239, 68, 68, 0.9);
+}
+
+.ai-cursor-dot--hold {
+  background: radial-gradient(circle at 30% 20%, #38bdf8, #0ea5e9);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.9);
+}
+
+.ai-cursor-ripple {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  animation: cursor-ripple 0.65s ease-out forwards;
+}
+
+@keyframes cursor-ripple {
+  0% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.6);
+  }
+}

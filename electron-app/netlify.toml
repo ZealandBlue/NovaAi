@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # You can override this in Netlify UI to point at your backend API
+  VITE_API_URL = "http://127.0.0.1:4000"

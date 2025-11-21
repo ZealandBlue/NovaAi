@@ -1,0 +1,15 @@
+{
+  "name": "ai-trading-widget-dapp",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "electron-app",
+    "backend-node",
+    "contracts"
+  ],
+  "scripts": {
+    "postinstall": "echo Root installed",
+    "bootstrap": "npm install --workspaces",
+    "lint": "echo 'add linters here'"
+  }
+}
